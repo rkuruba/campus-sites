@@ -32,7 +32,7 @@ CREATE PROCEDURE eventsproc()
     SET current_flag = 'N'
     where date < sysdate();
 END;
-delimiter ;
+delimiter;
 
 delete from events;
 delete from campus;
