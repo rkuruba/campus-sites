@@ -1,0 +1,50 @@
+<h1>Burgers</h1>
+
+<h2>Here is a list of all the burgers that have not been eaten.</h2>
+
+<ul>
+  {{#each burgers}}
+        {{#unless devoured}}
+        <li>
+
+      <p>Burger Name: {{burger_name}}</p>
+       <p>has it been eaten?: {{devoured}}</p>
+    
+    	<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+				<input type="hidden" name="devoured" value="true">
+				<button type="submit">Eat it!</button>
+			</form>
+
+    </li>
+        {{/unless}}
+
+  {{/each}}
+</ul>
+
+
+<h2>Here is a list of all the burgers that have been eaten.</h2>
+<ul>
+
+
+  {{#each burgers}}
+        {{#if devoured}}
+        <li>
+
+      <p>Burger Name: {{burger_name}}</p>
+       <p>has it been eaten?: {{devoured}}</p>
+
+ </li>
+
+        {{/if}}
+   
+  {{/each}}
+</ul>
+
+
+<h2>Add a Burger</h2>
+<form action="/api/burgers/" method="POST">
+    <input type="text" id="burger_name" name="burger_name">
+    <input type="radio" name="devoured" value="1" > Devoured!<br>
+    <input type="radio" name="devoured" value="0" checked> Not Devoured
+  <button type="submit">Add Burger</button>
+</form>
