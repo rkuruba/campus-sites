@@ -25,6 +25,15 @@ PRIMARY KEY ( `id` ) );
   PRIMARY KEY ( `id` ),
   FOREIGN KEY (Campus_ID) REFERENCES Campus(ID));
 
+  delimiter //
+CREATE PROCEDURE eventsproc()
+  BEGIN
+  update events
+    SET current_flag = 'N'
+    where date < sysdate();
+END;
+delimiter ;
+
 delete from events;
 delete from campus;
   
