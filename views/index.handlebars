@@ -1,42 +1,27 @@
-<h1>Burgers</h1>
+<h1>Welcome to Campus Sites!</h1>
 
-<h2>Here is a list of all the burgers that have not been eaten.</h2>
+<h2>This is the location where you can view the events in the campus</h2>
 
 <ul>
-  {{#each burgers}}
-        {{#unless devoured}}
+  {{#each event}}
+        {{!-- {{#unless devoured}} --}}
         <li>
 
-      <p>Burger Name: {{burger_name}}</p>
-       <p>has it been eaten?: {{devoured}}</p>
+       <p>Campus Name: {{campus}}</p>
+       <p>Event Title: {{title}}</p>
+       <p>Date: {{date}}</p>
+       <p>Start Time: {{start_time}}</p>
+       <p>End Time: {{end_time}}</p>
+       <p>Type: {{type}}</p>
+       <p>Current Flag: {{current_flag}}</p>
+
     
     	<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
 				<input type="hidden" name="devoured" value="true">
-				<button type="submit">Eat it!</button>
+				<button type="submit">remove</button>
 			</form>
 
     </li>
-        {{/unless}}
-
-  {{/each}}
-</ul>
-
-
-<h2>Here is a list of all the burgers that have been eaten.</h2>
-<ul>
-
-
-  {{#each burgers}}
-        {{#if devoured}}
-        <li>
-
-      <p>Burger Name: {{burger_name}}</p>
-       <p>has it been eaten?: {{devoured}}</p>
-
- </li>
-
-        {{/if}}
-   
   {{/each}}
 </ul>
 
