@@ -1,8 +1,71 @@
-<h1>Welcome to Campus Sites!</h1>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">GE Campus-Sites</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A GE Campus events dashboard</h5>
+        </div>
+        {{!-- <div class="row center">
+          <a href="http:/www.heroku.com/campsuSites" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Add Event</a>
+        </div> --}}
+        <br><br>
 
-<h2>This is the location where you can view the events in the campus</h2>
+      </div>
+    </div>
+    <div class="parallax"><img src="../assets/js/background4.jpg" alt="Unsplashed background img 1"></div>
+  </div>
 
-<ul>
+{{!-- <h5>View the events on GE campuses</h5> --}}
+
+{{!-- Deleted code block from here --}}
+
+ <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+<h5>Add a New Burger</h5>
+<form action="/api/burgers/" method="POST">
+
+    <input placeholder="One Eared Stag" id="burger_name" type="text" class="validate">
+          <label for="burger_name">Burger Name</label>
+<p>
+      <label>
+        <input name="devoured" type="radio" checked />
+        <span>Devoured</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="devoured" type="radio" />
+        <span>Not Devoured</span>
+      </label>
+    </p>
+
+  <button type="submit">Add Burger</button>
+</form>
+
+          </div>
+        </div>
+   <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">View Burgers</h5>
+
+            <p class="light">Proin interdum consectetur blandit. Vivamus mattis diam velit, aliquam eleifend est commodo quis. Vivamus eu ligula vitae ipsum hendrerit semper. Suspendisse mattis, tortor in viverra porta, odio lectus tempor orci, eget sagittis dui libero nec augue.</p>
+          </div>
+        </div>
+  <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">event_available</i></h2>
+            <h5 class="center"><h5>GE campus Events</h5>
+
+            <p class="light">
+  <ul>
   {{#each event}}
         {{!-- {{#unless devoured}} --}}
         <li>
@@ -23,13 +86,45 @@
 
     </li>
   {{/each}}
-</ul>
+</ul></p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+ </div>
+ 
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Placeholder for detailed info</h5>
+          <p class="grey-text text-lighten-4">Nulla hendrerit tellus eu neque luctus finibus. Quisque a nibh sed arcu sollicitudin suscipit sit amet volutpat tellus.</p>
 
 
-<h2>Add a Burger</h2>
-<form action="/api/burgers/" method="POST">
-    <input type="text" id="burger_name" name="burger_name">
-    <input type="radio" name="devoured" value="1" > Devoured!<br>
-    <input type="radio" name="devoured" value="0" checked> Not Devoured
-  <button type="submit">Add Burger</button>
-</form>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Add Stuff here</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">More Stuff here</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-4" href="http://materializecss.com">Materialize</a> and <font color="black">console.log Life.</font>
+      </div>
+    </div>
+  </footer>

@@ -8,7 +8,7 @@ if (process.env.JAWSDB_URL) {
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'cloud12s',
+    password: 'p@ssw0rd',
     database: 'events_db'
   });
 }
