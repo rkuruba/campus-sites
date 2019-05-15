@@ -31,8 +31,16 @@ const orm = {
       cb(result);
     });
   },
-
-
+/*
+  select: function(tableInput, cb) {
+    connection.query('SELECT * FROM ?? where current_flag', tableInput, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+*/
   create: function(table, cols, vals, cb) {
     const queryString = 'INSERT INTO ?? (??) VALUES (?)'
 
