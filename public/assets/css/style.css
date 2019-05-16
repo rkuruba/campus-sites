@@ -1,7 +1,7 @@
 li {
   padding: 5px;
   margin: 5px;
-  background: lightblue;
+  background: lightyellow;
 }
 
 .label {
@@ -11,7 +11,7 @@ li {
 .create-update-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
+  background: rgb(252, 252, 252);
 }
 
 .form-group {
@@ -39,7 +39,7 @@ li {
  }
  
  .parallax-container {
-   min-height: 380px;
+   min-height: 175px;
    line-height: 0;
    height: auto;
    color: rgba(255,255,255,.9);
@@ -88,7 +88,7 @@ li {
  }
  
  body {
-   background-color: #e6dc83;
+   background-color: white;
  }
  
  section.calendar {

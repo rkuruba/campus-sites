@@ -4,7 +4,7 @@
         <br><br>
         <h1 class="header center teal-text text-lighten-2">GE Campus Sites</h1>
         <div class="row center">
-          <h5 class="header col s12 teal-text text-lighten-2">Check out the events in your office</h5>
+          <h5 class="header col s12 teal-text text-lighten-2">Remove the events from your site</h5>
         </div>
         {{!-- <div class="row center">
           <a href="http:/www.heroku.com/campsuSites" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Add Event</a>
@@ -26,7 +26,7 @@
       {{!-- <div class="row"> --}}
  <div class="col s12 m4">
           <div class="icon-block">
-            
+           
             <p class="light">
               
   <ul>
@@ -35,16 +35,19 @@
 
    
         <li>
-       <p><b>Campus Name:</b> {{campus}}</p>
-       <p><b>Event Title:</b> {{title}}</p>
-       <p><b>Date:</b> {{date}}</p>
-       <p><b>Start Time:</b> {{start_time}}</p>
-       <p><b>End Time:</b> {{end_time}}</p>
-       <p><b>Type:</b> {{type}}</p>
-       {{!-- <p><b>Current Flag:</b> {{future}}</p> --}}
+       <p>Campus Name: {{campus}}</p>
+       <p>Event Title: {{title}}</p>
+       <p>Date: {{date}}</p>
+       <p>Start Time: {{start_time}}</p>
+       <p>End Time: {{end_time}}</p>
+       <p>Type: {{type}}</p>
+       {{!-- <p>Current Flag: {{future}}</p> --}}
 
     
-
+    	<form action="/api/events/{{this.id}}?_method=PUT" method="POST">
+				<input type="hidden" name="future" value="false">
+				<button class="btn waves-effect waves-light" type="submit">Remove an Event<i class="material-icons right">send</i></button>
+			</form>
       
     </li>
       {{/if}}
@@ -54,24 +57,18 @@
         </div>
       </div>
 
+<div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">home</i></h2>
+           <h5 class="center"><a href="/"> Back to Home</a></h5>
 
+
+</div>
 
       <!--   Icon Section   -->
       <div class="row">
         
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-<h5 class="center"><a href="/events/">Add an Event</a></h5>
-          </div>
-        </div>
 
-   <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-           <h5 class="center"><a href="/edit/">Edit an Event</a></h5>
 
-</div>
 
           </div>
         </div>
@@ -82,7 +79,7 @@
  </div>
  
 
-  <footer class="page-footer   light-blue darken-4">
+<footer class="page-footer   light-blue darken-4">
     <div class="container">
  
     <div class="footer-copyright">

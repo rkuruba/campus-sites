@@ -27,6 +27,16 @@ router.get('/events', function(req, res) {
   });
 });
 
+router.get('/edit', function(req, res) {
+  event.all(function(data) {
+    const hbsObject = {
+      event: data
+    };
+    console.log(hbsObject);
+    res.render('edit', hbsObject);
+  });
+});
+
 
 router.put("/api/events/:id", function(req, res) {
   const condition = "id = " + req.params.id;
