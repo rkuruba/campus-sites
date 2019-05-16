@@ -20,8 +20,6 @@ const sqlObj = (ob) => {
 
   return arr.toString();
 }
-
-
 const orm = {
   all: function(tableInput, cb) {
     connection.query('SELECT * FROM ??', tableInput, function(err, result) {
@@ -43,7 +41,7 @@ const orm = {
 */
   create: function(table, cols, vals, cb) {
     const queryString = 'INSERT INTO ?? (??) VALUES (?)'
-
+    // insert into events(campus,title,date,start_time,end_time,type,future) values ('Alpharetta','Icecream Social','2019-05-20','10:00','12:00','Social','1');
     connection.query(queryString, [table, cols, vals], function(err, result) {
       if (err) {
         throw err;
@@ -53,6 +51,17 @@ const orm = {
     });
   },
 
+  delete: function(table, cols, cb) {
+    const queryString = 'Delete from ?? where id ??'
+    // insert into events(campus,title,date,start_time,end_time,type,future) values ('Alpharetta','Icecream Social','2019-05-20','10:00','12:00','Social','1');
+    connection.query(queryString, [table, cols, vals], function(err, result) {
+      if (err) {
+        throw err;
+      }
+      console.log(queryString);
+      cb(result);
+    });
+  },
 
 update: (table, objColVals, condition, callback) => {
   let queryString = "UPDATE " + table;
@@ -71,6 +80,4 @@ update: (table, objColVals, condition, callback) => {
 }
 
 }
-
-
 module.exports = orm;

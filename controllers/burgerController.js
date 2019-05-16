@@ -16,35 +16,41 @@ router.get('/', function(req, res) {
   });
 });
 
-/*
 
-router.put("/api/burgers/:id", function(req, res) {
+
+router.put("/api/events/:id", function(req, res) {
   const condition = "id = " + req.params.id;
-
   console.log('condition', condition);
-
-
-  burger.update({
-    devoured: req.body.devoured
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.redirect("/")
-      res.status(200).end();
-    }
+  event.update({future: req.body.future}, condition, function(result) {
+    console.log('entered event updated');
+    res.redirect("/")
+    res.status(200).end();
   });
 });
 
-router.post('/api/burgers', function(req, res) {
-  burger.create(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], function(result) {
+router.post('/api/events', function(req, res) {
+  event.create(['campus','title','date','start_time','end_time','type','future'], [req.body.campus,req.body.title,req.body.date,req.body.start_time,req.body.end_time,req.body.type,req.body.future], function(result) {
+    // Send back the ID of the new quote
+   
+    //res.json({ id: result.insertId });
+    res.redirect("/");
+  });
+  event.delete(['id'], [req.body.campus], function(result) {
     // Send back the ID of the new quote
    
     //res.json({ id: result.insertId });
     res.redirect("/");
   });
 });
-*/
+
+router.delete('/api/events/:id', function(req, res) {
+  event.delete(['id'], [req.body.campus], function(result) {
+    // Send back the ID of the new quote
+   
+    //res.json({ id: result.insertId });
+    res.redirect("/");
+  });
+});
+
 
 module.exports = router;
