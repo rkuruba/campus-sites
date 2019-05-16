@@ -16,9 +16,6 @@
     <div class="parallax"><img src="../assets/js/background4.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
-{{!-- <h5>View the events on GE campuses</h5> --}}
-
-{{!-- Deleted code block from here --}}
 
  <div class="container">
     <div class="section">
@@ -27,18 +24,50 @@
  <div class="col s12 m4">
           <div class="icon-block">
             <h5 class="center"><h5>GE campus Events</h5>
-            <h2 class="center brown-text"><i class="material-icons">event_available</i></h2>
-            <h5 class="center"><h5>List of Events</h5>
+            <h2 class="center brown-text"><i class="material-icons">event_note</i></h2>
 
             <p class="light">
               
   <ul>
-  {{#each event}}
+
+  {{!-- {{#each event}} --}}
+<h2>Add an Event</h2>
+<form action="/api/events/" method="POST">
+    <div class="input-field col s6"> <label for="campus">Campus</label><input type="text" id="campus" name="campus"></div>
+   <div class="input-field col s6"> <label for="title">Title</label><input type="text" id="title" name="title">
+   <div class="input-field col s6"> <label for="date">Date</label><input type="text" id="date" name="date">
+   <div class="input-field col s6"> <label for="start_time">Start Time</label><input type="text" id="start_time" name="start_time">
+   <div class="input-field col s6"> <label for="end_time">End Time</label><input type="text" id="end_time" name="end_time">
+   <div class="input-field col s6"> <label for="type">Type</label><input type="text" id="type" name="type">
+   <p> <label><input type="radio" name="future" checked</label><span>Devoured!</span></label></p>
+    <p> <label><input type="radio" name="future"</label><span>Not Devoured!</span></label></p>
+ 
+ {{!-- <p>
+      <label>
+        <input name="group1" type="radio" checked />
+        <span>Red</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Yellow</span>
+      </label>
+    </p> --}}
+ <button type="submit">Add Burger</button>
+</form>
+
+
+  {{!-- {{/each}} --}}
+
+
+
+ {{#each event}}
         {{!-- {{#unless devoured}} --}}
         
         {{!-- <div><img class="materialboxed" width="200" src="../assets/js/sample-1.jpg" ></div> --}}
         <li>
-
+ 
        <p>Campus Name: {{campus}}</p>
        <p>Event Title: {{title}}</p>
        <p>Date: {{date}}</p>
@@ -62,55 +91,11 @@
 
 
 
-      <!--   Icon Section   -->
-      {{!-- <div class="row"> --}}
-        
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-<h5 class="center">Add an Event</h5>
-<form action="/api/burgers/" method="POST">
-
-
-   <button class="btn waves-effect waves-light" type="submit" name="action">Add An Event
-    <i class="material-icons right">send</i>
-  </button>
-</form>
-
-          </div>
-        </div>
-   <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-           <h5 class="center">Edit An Event</h5>
-<form action="/api/burgers/" method="POST">
-
-
-   <button class="btn waves-effect waves-light" type="submit" name="action">Edit An Event
-    <i class="material-icons right">send</i>
-  </button>
-</form>
-
-            <p class="light">Proin interdum consectetur blandit. Vivamus mattis diam velit, aliquam eleifend est commodo quis. Vivamus eu ligula vitae ipsum hendrerit semper. Suspendisse mattis, tortor in viverra porta, odio lectus tempor orci, eget sagittis dui libero nec augue.</p>
-          </div>
-        </div>
- 
-      </div>
       
-    </div>
- </div>
- 
 
   <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">A Placeholder for more info if needed</h5>
-          <p class="grey-text text-lighten-4">Nulla hendrerit tellus eu neque luctus finibus. Quisque a nibh sed arcu sollicitudin suscipit sit amet volutpat tellus.</p>
+  
 
-
-        </div>
-    </div>
     <div class="footer-copyright">
       <div class="container">
       Made by <a class="brown-text text-lighten-4" href="http://materializecss.com">Materialize</a> and <font color="black">console.log Life.</font>

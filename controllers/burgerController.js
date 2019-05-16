@@ -16,6 +16,15 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/events', function(req, res) {
+  event.all(function(data) {
+    const hbsObject = {
+      event: data
+    };
+    console.log(hbsObject);
+    res.render('event', hbsObject);
+  });
+});
 /*
 
 router.put("/api/burgers/:id", function(req, res) {
