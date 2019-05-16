@@ -1,8 +1,35 @@
-<h1>Welcome to Campus Sites!</h1>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">GE Campus-Sites</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A GE Campus events dashboard</h5>
+        </div>
+        {{!-- <div class="row center">
+          <a href="http:/www.heroku.com/campsuSites" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Add Event</a>
+        </div> --}}
+        <br><br>
 
-<h2>This is the location where you can view the events in the campus</h2>
+      </div>
+    </div>
+    <div class="parallax"><img src="../assets/js/background4.jpg" alt="Unsplashed background img 1"></div>
+  </div>
 
-<ul>
+{{!-- <h5>View the events on GE campuses</h5> --}}
+
+{{!-- Deleted code block from here --}}
+
+ <div class="container">
+    <div class="section">
+  <!--   Icon Section   -->
+      {{!-- <div class="row"> --}}
+ <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center"><h5>GE campus Events</h5>
+            <p class="light">
+              
+  <ul>
   {{#each event}}
       {{#if future}}
 
@@ -19,24 +46,72 @@
     
     	<form action="/api/events/{{this.id}}?_method=PUT" method="POST">
 				<input type="hidden" name="future" value="false">
-				<button type="submit">remove</button>
+				<button class="btn waves-effect waves-light" type="submit">Remove an Event<i class="material-icons right">send</i></button>
 			</form>
       
     </li>
       {{/if}}
   {{/each}}
-</ul>
+</ul></p>
+          </div>
+        </div>
+      </div>
 
 
-<h2>Add an Event</h2>
-<form action="/api/events/" method="POST">
-    <input type="text" id="campus" name="campus">
-    <input type="text" id="title" name="title">
-    <input type="text" id="date" name="date">
-    <input type="text" id="start_time" name="start_time">
-    <input type="text" id="end_time" name="end_time">
-    <input type="text" id="type" name="type">
-    <input type="radio" name="future" value="1" > Devoured!<br>
-    <input type="radio" name="future" value="0" checked> Not Devoured
-  <button type="submit">Add Event</button>
+
+      <!--   Icon Section   -->
+      <div class="row">
+        
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+<h5 class="center">Add an Event</h5>
+<form action="/api/burgers/" method="POST">
+
+
+   <button class="btn waves-effect waves-light" type="submit" name="action">Add An Event
+    <i class="material-icons right">send</i>
+  </button>
 </form>
+
+          </div>
+        </div>
+   <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+           <h5 class="center">Edit An Event</h5>
+<form action="/api/burgers/" method="POST">
+
+
+   <button class="btn waves-effect waves-light" type="submit" name="action">Edit An Event
+    <i class="material-icons right">send</i>
+  </button>
+</form>
+
+</div>
+
+          </div>
+        </div>
+ 
+      </div>
+      
+    </div>
+ </div>
+ 
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">A Placeholder for more info if needed</h5>
+          <p class="grey-text text-lighten-4">Nulla hendrerit tellus eu neque luctus finibus. Quisque a nibh sed arcu sollicitudin suscipit sit amet volutpat tellus.</p>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-4" href="http://materializecss.com">Materialize</a> and <font color="black">console.log Life.</font>
+      </div>
+    </div>
+  </footer>

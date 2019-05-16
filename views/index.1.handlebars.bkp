@@ -1,0 +1,42 @@
+<h1>Welcome to Campus Sites!</h1>
+
+<h2>This is the location where you can view the events in the campus</h2>
+
+<ul>
+  {{#each event}}
+      {{#if future}}
+
+   
+        <li>
+       <p>Campus Name: {{campus}}</p>
+       <p>Event Title: {{title}}</p>
+       <p>Date: {{date}}</p>
+       <p>Start Time: {{start_time}}</p>
+       <p>End Time: {{end_time}}</p>
+       <p>Type: {{type}}</p>
+       <p>Current Flag: {{future}}</p>
+
+    
+    	<form action="/api/events/{{this.id}}?_method=PUT" method="POST">
+				<input type="hidden" name="future" value="false">
+				<button type="submit">remove</button>
+			</form>
+      
+    </li>
+      {{/if}}
+  {{/each}}
+</ul>
+
+
+<h2>Add an Event</h2>
+<form action="/api/events/" method="POST">
+    <input type="text" id="campus" name="campus">
+    <input type="text" id="title" name="title">
+    <input type="text" id="date" name="date">
+    <input type="text" id="start_time" name="start_time">
+    <input type="text" id="end_time" name="end_time">
+    <input type="text" id="type" name="type">
+    <input type="radio" name="future" value="1" > Devoured!<br>
+    <input type="radio" name="future" value="0" checked> Not Devoured
+  <button type="submit">Add Event</button>
+</form>

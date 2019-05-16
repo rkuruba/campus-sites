@@ -1,0 +1,104 @@
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">GE Campus-Sites</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A GE Campus events dashboard</h5>
+        </div>
+        {{!-- <div class="row center">
+          <a href="http:/www.heroku.com/campsuSites" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Add Event</a>
+        </div> --}}
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="../assets/js/background4.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+ <div class="container">
+    <div class="section">
+  <!--   Icon Section   -->
+      {{!-- <div class="row"> --}}
+ <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center"><h5>GE campus Events</h5>
+            <h2 class="center brown-text"><i class="material-icons">event_note</i></h2>
+
+            <p class="light">
+              
+  <ul>
+
+  {{!-- {{#each event}} --}}
+<h2>Add an Event</h2>
+<form action="/api/events/" method="POST">
+    <div class="input-field col s6"> <label for="campus">Campus</label><input type="text" id="campus" name="campus"></div>
+   <div class="input-field col s6"> <label for="title">Title</label><input type="text" id="title" name="title">
+   <div class="input-field col s6"> <label for="date">Date</label><input type="text" id="date" name="date">
+   <div class="input-field col s6"> <label for="start_time">Start Time</label><input type="text" id="start_time" name="start_time">
+   <div class="input-field col s6"> <label for="end_time">End Time</label><input type="text" id="end_time" name="end_time">
+   <div class="input-field col s6"> <label for="type">Type</label><input type="text" id="type" name="type">
+ <input type="radio" name="future" value="1"  checked> 
+ 
+ 
+ {{!-- <p>
+      <label>
+        <input name="group1" type="radio" checked />
+        <span>Red</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Yellow</span>
+      </label>
+    </p> --}}
+ <button type="submit">Add Burger</button>
+</form>
+
+
+  {{!-- {{/each}} --}}
+
+
+
+ {{#each event}}
+        {{!-- {{#unless devoured}} --}}
+        
+        {{!-- <div><img class="materialboxed" width="200" src="../assets/js/sample-1.jpg" ></div> --}}
+        <li>
+ 
+       <p>Campus Name: {{campus}}</p>
+       <p>Event Title: {{title}}</p>
+       <p>Date: {{date}}</p>
+       <p>Start Time: {{start_time}}</p>
+       <p>End Time: {{end_time}}</p>
+       <p>Type: {{type}}</p>
+       <p>Current Flag: {{current_flag}}</p>
+
+    
+    	<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+				<input type="hidden" name="devoured" value="true">
+				<button type="submit">remove</button>
+			</form>
+
+    </li>
+  {{/each}}
+</ul></p>
+          </div>
+        </div>
+      </div>
+
+
+
+      
+
+  <footer class="page-footer teal">
+  
+
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-4" href="http://materializecss.com">Materialize</a> and <font color="black">console.log Life.</font>
+      </div>
+    </div>
+  </footer>

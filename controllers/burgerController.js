@@ -17,6 +17,16 @@ router.get('/', function(req, res) {
 });
 
 
+router.get('/events', function(req, res) {
+  event.all(function(data) {
+    const hbsObject = {
+      event: data
+    };
+    console.log(hbsObject);
+    res.render('event', hbsObject);
+  });
+});
+
 
 router.put("/api/events/:id", function(req, res) {
   const condition = "id = " + req.params.id;
@@ -35,12 +45,12 @@ router.post('/api/events', function(req, res) {
     //res.json({ id: result.insertId });
     res.redirect("/");
   });
-  event.delete(['id'], [req.body.campus], function(result) {
+///  event.delete(['id'], [req.body.campus], function(result) {
     // Send back the ID of the new quote
    
     //res.json({ id: result.insertId });
-    res.redirect("/");
-  });
+  //  res.redirect("/");
+//  });
 });
 
 router.delete('/api/events/:id', function(req, res) {
